@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}Book Details{% endblock %}
+
+{% block content %}
+<div class="align-center">
+    <div class="row column large-8">
+        
+        <div class="small-12 medium-5 flex-container columns">
+            <img class="show-for-medium" src="https://placehold.it/350x550" alt="" />
+        </div>
+        
+        <div class="small-12 medium-7 columns">
+            <h3>My Awesome Product</h3>
+            <p>Author: {{ book['author'] }}</p>
+            <p>Publisher: {{ book['publisher_name'] }}</p>
+            <p>Price: ${{ book['price'] }}</p>
+            <input type="number" id="quantity_{{ book['book_id'] }}" value="1" min="1" max="10">
+            <button class="button expanded" onclick="addToCart({{ book['book_id'] }})">Add to Cart</button>
+            
+            <div class="small secondary expanded button-group">
+                <a class="button">Facebook</a>
+                <a class="button">Twitter</a>
+                <a class="button">Yo</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

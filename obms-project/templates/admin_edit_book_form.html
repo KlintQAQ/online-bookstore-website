@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}Book Details{% endblock %}
+
+{% block content %}
+<div class="row column align-center medium-8 large-6">
+    <form method="post" action="{{ url_for('admin_edit_book_route', book_id=book.book_id) }}">
+        <fieldset>
+            <div class="row">
+                <div class="columns">
+                    <label>Title
+                        <input type="text" name="title" value="{{ book.title }}" placeholder="Book Title">
+                    </label> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <label>ISBN
+                        <input type="text" name="isbn" value="{{ book.isbn }}" placeholder="ISBN">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <label>Genre
+                        <input type="text" name="genre" value="{{ book.genre }}" placeholder="Genre">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns small-6">
+                    <label>Author First Name
+                        <input type="text" name="author_first_name" value="{{ book.author_first_name }}" placeholder="Author First Name">
+                    </label>
+                </div>
+                <div class="columns small-6">
+                    <label>Author Last Name
+                        <input type="text" name="author_last_name" value="{{ book.author_last_name }}" placeholder="Author Last Name">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <label>Publisher Name
+                        <input type="text" name="publisher_name" value="{{ book.publisher_name }}" placeholder="Publisher Name">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <label>Year of Publication
+                        <input type="text" name="year_of_publication" value="{{ book.year_of_publication }}" placeholder="Year of Publication">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <label>Price
+                        <input type="text" name="price" value="{{ book.price }}" placeholder="Price">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <input type="submit" class="button" value="Update Book">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

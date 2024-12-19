@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="full-width-slogan">
+    <div class="full-width-slogan-section">
+            <div class="full-width-slogan-icon text-center">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="41px" height="34px" viewBox="-235 240 41 34" style="enable-background:new -235 240 41 34;" xml:space="preserve">
+                    <path class="quote-path" d="M-231.3,260.4c0-5,1.3-8.8,3.7-11.7c2.4-2.8,6-4.6,10.5-5.5v5c-3.5,1-6,2.8-7.1,5.5c-0.7,1.4-0.9,2.8-0.8,4h8.1v12.8h-14.4V260.4z"/>
+                    <path class="quote-path" d="M-212,260.4c0-5,1.3-8.8,3.7-11.7c2.4-2.8,6-4.6,10.5-5.5v5c-3.5,1-6,2.8-7.1,5.5c-0.7,1.4-0.9,2.8-0.8,4h8.1v12.8H-212V260.4z"/>
+                </svg>
+            </div>
+            <div class="full-width-slogan-content">
+                <h5 class="full-width-slogan-text">
+                    Where Every Book Finds Its Perfect Reader
+                </h5>
+            </div>
+    </div>
+</div>  
+<br />
+<div class="row column text-center">
+    <h2>
+        <a href="{{ url_for('books_route') }}">
+            Recent Books
+        </a>
+    </h2>
+    <hr>
+</div>
+{% include "book_list_block.html" %}
+
+{% endblock %}
+    
+    

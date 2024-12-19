@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}Book Details{% endblock %}
+
+{% block content %}
+<div class="grid-container">
+    <h1>Admin Book Management</h1>
+    <a href="{{ url_for('admin_add_book_route') }}" class="button">Add New Book</a>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book['title'] }}</td>
+                <td>{{ book['author_first_name'] }} {{ book['author_last_name'] }}</td>
+                <td>{{ book['genre'] }}</td>
+                <td>
+                    <a href="{{ url_for('admin_edit_book_route', book_id=book['book_id']) }}" class="button editButton">Edit</a>
+                    <form action="{{ url_for('admin_remove_book_route', book_id=book['book_id']) }}" method="post" class="removeForm" style="display: inline;">
+                        <button type="submit" class="alert button">Remove</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('click', function(event) {
+            if (event.target && event.target.matches('.editButton')) {
+                // Allow the default link behavior to proceed
+                return;
+            }
+
+            if (event.target && event.target.matches('.removeForm .alert.button')) {
+                event.preventDefault();  // Prevent the default form submission
+                const confirmation = confirm('Are you sure you want to remove this book?');
+                if (confirmation) {
+                    event.target.closest('form').submit();  // Submit the form if confirmed
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

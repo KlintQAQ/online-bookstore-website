@@ -1,0 +1,70 @@
+<!-- home.html -->
+{% extends "layout.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="row column align-center medium-4 sign-in-form">
+    <form action="{{url_for('register_route')}}" class="form-stacked" method="POST">
+        <input type="hidden" name="next" value="/">
+        <fieldset>
+            <div class="row">
+                <div class="columns">
+                    <label>Username
+                        <input type="text" placeholder="Enter your username" id="username" name="username" required>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <label>First Name
+                        <input type="text" placeholder="Enter your first name" id="first_name" name="first_name" required>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <label>Last Name
+                        <input type="text" placeholder="Enter your last name" id="last_name" name="last_name" required>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <label>Email
+                        <input type="text" placeholder="Enter your email" id="email" name="email" required>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <label>Password
+                        <input type="password" placeholder="Enter your password" id="password" name="password" required>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <label>Phone
+                        <input type="text" placeholder="Enter your phone" id="phone" name="phone">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <label>Address
+                        <input type="text" placeholder="Enter your address" id="address" name="address">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <input tabindex="3" class="button large" type="submit" value="Sign into your account">
+                    <hr>
+                    <p class="reset"><a tabindex="4" href="#" title="Recover your password">Forgot password?</a></p>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

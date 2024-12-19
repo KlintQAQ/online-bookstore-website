@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="pure-g">
+        {% for book in books %}
+        <div class="pure-u-1-4">
+            <div class="product-box">
+                <!-- <p>
+                    <a href="./bookDetailsAdmin/{{ book.id }}">
+                        <img src="static/images/books/book.png" alt="Book Cover for {{ book.title }}" />
+                    </a>
+                </p> -->
+                <p>Hi</p>
+                <a href="/admin/book_details/{{ book.book_id }}" class="title">{{ book.title }}</a><br/>
+                <a href="/admin/book_details/{{ book.book_id }}" class="title">- {{ book.author_first_name }} {{ book.author_last_name }}</a><br/>
+                <a href="/admin/book_details/{{ book.book_id }}" class="title">- {{ book.publisher_name }}</a><br/>
+                <p class="price">$ {{ book.price }} /-</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="row column align-center medium-4 sign-in-form">
+    <form action="{{url_for('login_route')}}" class="form-stacked" method="POST">
+        <input type="hidden" name="next" value="/">
+        <fieldset>
+            <div class="row">
+                <div class="columns">
+                    <label>Username
+                        <input type="text" placeholder="Enter your username" id="username" name="username" required>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <label>Password
+                        <input type="password" placeholder="Enter your password" id="password" name="password" required>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <label>Account Type
+                        <select id="account_type" name="account_type">
+                            <option value="customer" selected>Customer</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns">
+                    <input tabindex="3" class="button large" type="submit" value="Sign into your account">
+                    <hr>
+                    <p class="reset"><a tabindex="4" href="#" title="Recover your password">Forgot password?</a></p>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
+    

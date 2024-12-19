@@ -1,0 +1,87 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Bookstore Management System">
+    
+    <title>{% block title %}Online Bookstore Management System{% endblock %}</title>
+    
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    
+    <!-- global styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="title-bar" data-responsive-toggle="realEstateMenu" data-hide-for="small">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title">Menu</div>
+    </div>
+    
+    <div class="top-bar" id="realEstateMenu">
+        <div class="top-bar-left">
+            <ul class="menu" data-responsive-menu="accordion">
+                <li class="menu-text">
+                    <a href="{{ url_for('home_route') }}">
+                        Online Book Management System
+                    </a>
+                </li>
+                {% if account_type == 'customer' %}
+                    <li><a href="{{ url_for('books_route') }}">Books</a></li>
+                    <li><input id="searchInput" type="search" name="search_keyword" placeholder="Search by book title" value="{{ search_keyword }}"></li>
+                    <li><input id="searchButton" type="submit" class="button" value="Search"></li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+                {% if user_id %}
+                    {% if account_type == 'customer' %}
+                        <li><a href="{{ url_for('books_route') }}">Books</a></li>
+                        <li>
+                            <a href="{{ url_for('cart_route') }}" class="button-badge">
+                                View Cart
+                                {% if cart_count != 0 %}
+                                    <span class="label alert" id="cart-count-label">{{ cart_count }}</span>
+                                {% endif %}
+                            </a>
+                        </li>
+                        <li><a href="{{ url_for('dashboard_route') }}">{{ user_fullname }}</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('admin_index_route') }}">{{ user_fullname }}</a></li>                       
+                    {% endif %}
+                    <li><a href="{{ url_for('logout_route') }}">Logout</a></li> 
+                {% else %}
+                    <li><a href="{{ url_for('register_route') }}">Sign Up</a></li>
+                    <li><a class="button" href="{{ url_for('login_route') }}">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <!-- /Navigation -->
+    
+    <div class="block-content">
+        {% block content %}{% endblock %}
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 - Database Management Systems - Group 7</p>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+        $(document).foundation();
+
+        $(document).ready(function(){
+            $('#searchButton').click(function(){
+                var searchKeyword = $('#searchInput').val();
+                var searchUrl = "{{ url_for('search_route') }}?search_keyword=" + searchKeyword;
+                window.location.href = searchUrl;
+            });
+        });
+    </script>
+</body>
+</html>

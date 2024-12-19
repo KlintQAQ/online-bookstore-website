@@ -1,0 +1,192 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.block-content {
+    padding: 20px;
+}
+
+.menu .menu-text {
+    padding: 0;
+}
+
+.full-width-slogan {
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1)), url("../images/henry-be--Pg63JThyCg-unsplash.jpg");
+    background-size: 100% auto; /* 100% width, maintain aspect ratio for height */
+    background-position: center; /* Center the background image horizontally and vertically */
+}
+
+.full-width-slogan-icon .quote-path {
+    fill: none;
+    stroke: #ffae00;
+    stroke-width: 2.5192;
+    stroke-miterlimit: 10;
+}
+
+.full-width-slogan-content,
+.full-width-slogan-icon {
+    text-align: center;
+}
+
+.full-width-slogan-section .full-width-slogan-text {
+    font-weight: 300;
+    color: #ffffff;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 1.5em;
+}
+
+@media print, screen and (min-width: 40em) {
+    .full-width-slogan-section .full-width-slogan-text {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+@media print, screen and (min-width: 64em) {
+    .full-width-slogan-section .full-width-slogan-text {
+        padding-left: 180px;
+        padding-right: 180px;
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (min-width: 75em) {
+    .full-width-slogan-section .full-width-slogan-text {
+        padding-left: 300px;
+        padding-right: 300px;
+    }
+}
+
+.full-width-slogan-section {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    margin-bottom: 0.2em;
+}
+
+.full-width-slogan-section {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.8em;
+}
+
+.full-width-slogan-section .slick-slider {
+    margin-bottom: 0px;
+}
+
+.full-width-slogan-text,
+.full-width-slogan-content,
+.full-width-slogan-icon {
+    padding-bottom: 2rem;
+}
+
+.full-width-slogan-content {
+    width: 100%;
+}  
+
+.sign-in-form {
+    padding: 1rem 1.5em;
+    border: 1px solid #e6e6e6;
+    background-color: #fefefe;
+}
+
+.button-badge {
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    position: relative;
+    display: inline-block;
+    transition: all ease 0.4s;
+}
+
+.button-badge .label {
+    position: absolute;
+    padding: 3px;
+    top: 0px;
+    right: 2px;
+    font-size: 0.5em;
+}
+
+.order-summary {
+    max-width: 500px;
+    background-color: #fefefe;
+}
+
+.order-summary-title {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid #e6e6e6;
+}
+
+.order-summary-item {
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.order-summary-item .item-name,
+.order-summary-item .item-price {
+    padding: 0 1rem;
+}
+
+.order-summary-item .item-name p,
+.order-summary-item .item-price p {
+    margin: 0;
+    padding: 0;
+}
+
+.order-summary-item .title {
+    font-weight: bold;
+}
+
+.order-summary-details {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid #e6e6e6;
+    border-top: none;
+}
+
+.dashboard {
+    padding: 1rem 1.5em;
+    border: 1px solid #e6e6e6;
+    background-color: #fefefe;
+}
+
+.notification-badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 8px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

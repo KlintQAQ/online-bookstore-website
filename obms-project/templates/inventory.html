@@ -1,0 +1,30 @@
+<!-- home.html -->
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Warehouse Inventory</h2>
+    <table>
+        <tr>
+            <th>Item Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Location</th>
+        </tr>
+        <tr>
+            <td>Product 1</td>
+            <td>Electronics</td>
+            <td>50</td>
+            <td>Shelf A-1</td>
+        </tr>
+        <tr>
+            <td>Product 2</td>
+            <td>Clothing</td>
+            <td>100</td>
+            <td>Shelf B-2</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </table>
+{% endblock %}
+
